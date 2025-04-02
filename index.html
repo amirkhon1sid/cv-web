@@ -1,22 +1,73 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>My Website</title><link rel="stylesheet" href="styles.css"></head>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Обеспечивает адаптивность -->
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Обеспечиваем, что страница растягивается на весь экран */
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0; /* Цвет фона */
+        }
+
+        /* Контейнер, который будет растягиваться на весь экран */
+        .container-wrapper-genially {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Стиль видео, которое будет по центру */
+        .loader-genially {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10%;
+        }
+
+        /* Поддержка адаптивности для генерируемого контента */
+        .genially-embed {
+            width: 100%;
+            height: 100%;
+            max-width: 1200px; /* Ограничиваем максимальную ширину контента */
+            position: relative;
+        }
+    </style>
+</head>
 <body>
-<div class="container-wrapper-genially" style="position: relative; 
 
-max-width: 100%;">
+<div class="container-wrapper-genially">
+    <video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted">
+        <source src="https://static.genially.com/resources/loader-default-rebranding.mp4" type="video/mp4" />
+        Ваш браузер не поддерживает тег video.
+    </video>
+    <div id="67edab4c6e06c9cda5db6948" class="genially-embed"></div>
+</div>
 
-<video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" 
-style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);
-width: 80px;height: 80px;margin-bottom: 10%">
+<script>
+    (function (d) { 
+        var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; 
+        if (d.getElementById(id)) { return; } 
+        js = d.createElement("script"); 
+        js.id = id; 
+        js.async = true; 
+        js.src = "https://view.genially.com/static/embed/embed.js"; 
+        ref.parentNode.insertBefore(js, ref); 
+    }(document));
+</script>
 
-<source src="https://static.genially.com/resources/loader-default-rebranding.mp4" type="video/mp4" />
-Your browser does not support the video tag.
-</video>
-<div id="67edab4c6e06c9cda5db6948" class="genially-embed" style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div></div>
-
-<script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; 
-if (d.getElementById(id)) { return; } js = d.createElement("script"); 
-js.id = id; js.async = true; js.src = "https://view.genially.com/static/embed/embed.js"; 
-ref.parentNode.insertBefore(js, ref); }(document));</script>
-
-</body></html>
+</body>
+</html>
